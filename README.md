@@ -2,13 +2,17 @@
 
 Sculpt brush model, retopology decimation plan, texture paint channels.
 
-Part of the Counted fleet (planet-3d-model), generated from `seeds/seeds.yaml`.
+Part of the Counted fleet (planet-3d-model), stack class `frontend`, generated
+from `seeds/seeds.yaml`.
 
-## Architecture
+## Architecture (docs/REPO_STANDARD.md)
 
-- `src/modules.ts` — SculptBrush, DecimationPlanner, PaintChannels
+- `src/lib/modules.ts` — module registry: SculptBrush, DecimationPlanner, PaintChannels
+- `src/lib/rng.ts` — deterministic seeded PRNG (mulberry32)
 - `src/index.ts` — public API (`SPEC`, `MODULES`, Registry)
-- `src/rng.ts` — deterministic seeded PRNG (mulberry32)
+- `src/ui/` — frontend surfaces (reserved; this repo ships a headless kernel)
+- `assets/<kind>/` — media by kind (see assets policy READMEs)
+- `docs/STRUCTURE.md` — this repo's stack declaration + layout map
 - `tests/index.test.ts` — deterministic behavior suite
 
 ## Usage
